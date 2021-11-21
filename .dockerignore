@@ -5,7 +5,7 @@
 .dockerignore
 app/storage/logs/*
 app/storage/views/*
-vendor/*
+# vendor/*
 storage/framework/cache/*
 node_modules
 .vagrant

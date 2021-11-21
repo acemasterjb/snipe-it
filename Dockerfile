@@ -119,6 +119,7 @@ USER root
 #COPY docker/app_install.exp /tmp/app_install.exp
 #RUN chmod +x /tmp/app_install.exp
 #RUN /tmp/app_install.exp
+# ENV APP_KEY $(php artisan key:generate --show)
 
 ############### DATA VOLUME #################
 
@@ -131,6 +132,7 @@ COPY docker/supervisor-exit-event-listener /usr/bin/supervisor-exit-event-listen
 RUN chmod +x /startup.sh /usr/bin/supervisor-exit-event-listener
 
 CMD ["/startup.sh"]
+RUN chmod o+w /var/www/html/storage/ -R
 
 EXPOSE 80
 EXPOSE 443
