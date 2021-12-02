@@ -130,6 +130,7 @@ VOLUME ["/var/lib/snipeit"]
 COPY docker/startup.sh docker/supervisord.conf /
 COPY docker/supervisor-exit-event-listener /usr/bin/supervisor-exit-event-listener
 RUN chmod +x /startup.sh /usr/bin/supervisor-exit-event-listener
+RUN chmod o+w /var/www/html/artisan -R
 
 CMD ["/startup.sh"]
 RUN chmod o+w /var/www/html/storage/ -R

@@ -17,7 +17,7 @@
 
 docker build -t mariadb $(pwd)/docker/init-db/.
 
-docker run -itd -p 3307:3307 \
+docker run -itd -p 3307:3306 \
     --name snipeit-db-instance \
     --env-file ./.env.mysql \
     --mount source=snipesql-vol,target=/var/lib/mysql \
